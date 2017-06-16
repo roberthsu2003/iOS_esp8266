@@ -2,9 +2,9 @@
 #include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
 
-const char* ssid = "Robert iphone";
-const char* password = "0926656000";
-const char* host="iostest-64ed7.firebaseio.com";
+const char* ssid = "wifi ssid";
+const char* password = "wifi password";
+const char* host="firebase host;
 const int httpsPort = 443;
 #define D2 4
 String section;
