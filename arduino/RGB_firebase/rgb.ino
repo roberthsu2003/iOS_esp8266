@@ -1,17 +1,19 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
-
+#include <Adafruit_NeoPixel.h>
+#define PIN D2
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, PIN, NEO_GRB + NEO_KHZ800);
 const char* ssid = "wifi ssid";
 const char* password = "wifi password";
-const char* host="firebase host;
+const char* host="firebase host";
 const int httpsPort = 443;
-#define D2 4
+
 String section;
 
 void setup()
 {
-  pinMode(D2,OUTPUT);
+  pixels.begin();  
   Serial.begin(115200);
   Serial.println();
   //wifi連線
@@ -93,5 +95,9 @@ void parseJSON(String line){
     Serial.println(Rvalue);
     Serial.println(Gvalue);
     Serial.println(Bvalue);
+    
+    pixels.setPixelColor(0, pixels.Color(Rvalue, Gvalue, Bvalue));
+    pixels.show();
+    delay(200);
     
 }
