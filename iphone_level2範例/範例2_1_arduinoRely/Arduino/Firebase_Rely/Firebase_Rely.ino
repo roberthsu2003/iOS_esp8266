@@ -4,14 +4,13 @@
  *
  * Relay Shield transistor closes relay when D1 is HIGH
  */
- 
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
 
 #define RelayPin D1
-#define FIREBASE_HOST "io-64ed7.firebaseio.com" //輸入Firebase database專案的位址，不要http:
-#define WIFI_SSID "iPhon" //輸入wifi ssid
-#define WIFI_PASSWORD "06000" //請輸入密碼
+#define FIREBASE_HOST "iostest.firebaseio.com" //輸入Firebase database專案的位址，不要http://
+#define WIFI_SSID "iP" //輸入wifi ssid
+#define WIFI_PASSWORD "09" //請輸入密碼
 
 void setup() {
   Serial.begin(115200);
@@ -30,15 +29,14 @@ void setup() {
 }
 
 void loop() {
-  bool d1Value = Firebase.getBool("Relay/D1");
-  Serial.print("d1Value");
-  Serial.println(d1Value);
-  if (Firebase.success() == false){
-    Serial.println("取得Relay/D1失敗，重新執行");
-    return;
+  
+  if (Firebase.success()){
+    bool d1Value = Firebase.getBool("Relay/D1");
+    digitalWrite(RelayPin,d1Value);
+  }else{
+    Serial.println("取得Relay/D1失敗，重新執行");    
   }
-  //D1Rely true->off, false->on
-  digitalWrite(RelayPin,d1Value);
+  
   delay(200); 
 
 }
