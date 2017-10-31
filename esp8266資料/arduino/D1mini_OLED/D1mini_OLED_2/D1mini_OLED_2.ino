@@ -31,15 +31,15 @@ void setup()   {
   display.clearDisplay();
 
   // text display tests
-  display.setTextSize(2);
+  display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0, 0);
   
   display.println("OK");
   display.display();
   
-  delay(2000);
-  display.clearDisplay();
+  //delay(2000);
+  //display.clearDisplay();
 
 }
 
@@ -51,7 +51,7 @@ void loop() {
     display.setCursor(0, 0);
     display.println(data);
     display.display();
-    delay(2000);
-    display.clearDisplay();
+    //delay(2000);
+    //display.clearDisplay();
   }
 }
