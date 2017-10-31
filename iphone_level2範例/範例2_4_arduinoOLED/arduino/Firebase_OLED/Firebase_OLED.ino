@@ -24,9 +24,9 @@ Adafruit_SSD1306 display(OLED_RESET);
 #define LOGO16_GLCD_WIDTH  16
 //OLED-----------
 
-#define FIREBASE_HOST "iostest-64ed7.firebaseio.com"
-#define WIFI_SSID "robert_hsu_home"
-#define WIFI_PASSWORD "0926656000"
+#define FIREBASE_HOST "iostes.firebaseio.com"
+#define WIFI_SSID "robe"
+#define WIFI_PASSWORD "06000"
 
 
 //OLED---

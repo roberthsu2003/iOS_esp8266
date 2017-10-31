@@ -8,9 +8,9 @@
 #define RGBPIN D2
 #define DHTPIN D4 
 #define DHTTYPE DHT11   // DHT 11
-#define FIREBASE_HOST "iostest-64ed7.firebaseio.com"
-#define WIFI_SSID "robert_hsu_home"
-#define WIFI_PASSWORD "0926656000"
+#define FIREBASE_HOST "iostest.firebaseio.com"
+#define WIFI_SSID "robert"
+#define WIFI_PASSWORD "06000"
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(1, RGBPIN, NEO_GRB + NEO_KHZ800);
 
